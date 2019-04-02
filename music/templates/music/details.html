@@ -1,0 +1,58 @@
+{% extends 'music/base.html' %}
+{% block title %}Album Detail{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-3">
+
+
+      <img src="{{album.album_logo.url}}" height="420" width="420">
+      <h1>{{album.album_title}}</h1>
+      <h2>{{album.artist}}</h2>
+    </div>
+
+
+<div class= "col-7">
+  <div class="container">
+
+
+  <form style="display:inline;" action="{% url 'detail' album.id %}" method="get">
+    <button type="submit" class="btn btn-outline-primary" >View All</button>
+  </form>
+  <form style="display:inline;"  action="#" method="get">
+    <button type="submit" class="btn btn-outline-primary" >Add New Song</button>
+  </form>
+  </div>
+<div class="nut">
+<h1>All Songs</h1>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3">Title</th>
+    </tr>
+  </thead>
+<tbody>
+
+</tbody>
+
+  {% for song in album.song_set.all %}
+
+  <tr>
+    <td><hr class="style-five" ></td>
+    <td colspan="3">{{song.song_title}}</td>
+    <td colspan="3" >
+      <form class="woss1" action="#" method="get">
+        <button type="submit" class="btn btn-success"><i class="fas fa-play"></i>play</button>
+      </form>
+    </td>
+    <td colspan="3">
+      <form class="woss2" action="#" method="get">
+        <button type="submit" class="btn btn-danger"><i class="fas fa-times"></i>Delete</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

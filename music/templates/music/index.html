@@ -1,0 +1,30 @@
+{% extends 'music/base.html' %}
+{% block title %}Albums{% endblock %}
+{% block body %}
+{% if all_album %}
+
+    <div class="row">
+  {%for album in all_album %}
+    <div class="col-3">
+
+
+    <a href="{% url 'detail' album.id %}"><img src="{{album.album_logo.url}}" height="420" width="460" ><br></a><h2>{{album.album_title}}</h2><br><h3>{{album.artist}}</h3><br>
+    <form style="display:inline;" method="get" action="{% url 'detail' album.id %}">
+    <button class="btn btn-primary" type="submit">View details</button>
+    </form>
+    <form style="display:inline;"  method="post" action="{% url 'album-update' album.id %}">
+      {% csrf_token %}
+    <button class="btn btn-secondary" type="submit"><i class="fas fa-pencil-alt"></i></button>
+    </form>
+    <form style="display:inline;"  method="post" action="{% url 'album-delete' album.id %}">
+         {% csrf_token %}
+    <button class="btn btn-secondary" type="submit"><i class="fas fa-trash-alt"></i></button>
+    </form>
+    </div>
+  {%endfor%}
+    </div>
+
+{% else %}
+  <h3>there are No Albums</h3>
+{% endif %}
+{% endblock %}

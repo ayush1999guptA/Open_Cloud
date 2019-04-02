@@ -1,0 +1,61 @@
+body{
+  background-image: url('https://images.pexels.com/photos/1020317/pexels-photo-1020317.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.col-3
+{
+margin-top: 1%;
+margin-left: 5%;
+padding-top: 0.3%;
+padding-left: 0.2%;
+padding-right: 0.2%;
+padding-bottom: 1%;
+background-image: url('https://images.pexels.com/photos/1122400/pexels-photo-1122400.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+background-size: cover;
+}
+h2
+{
+  font-family: 'Baloo Chettan', cursive;
+}
+h3
+{
+  font-family: 'Raleway', sans-serif;
+}
+hr.style-five {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+}
+hr.style-five:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+.col-7
+{ margin-top: 5%;
+  margin-left: 3%;
+
+}
+.nut{
+  padding-left: 5%;
+  /* background-color: white; */
+  margin-top: 3%;
+  background-image: url('https://images.pexels.com/photos/1122400/pexels-photo-1122400.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  background-size: cover;
+}
+.woss{
+  /* border: 2px solid black; */
+  padding-left: 200%;
+}
+.woss1{
+  /* border: 2px solid black; */
+  padding-left: 780%;
+}
+.woss2{
+  padding-left: 730%;
+}
+.card{
+  margin-top: 20%;
+
+}
