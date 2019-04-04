@@ -3,14 +3,15 @@ Open cloud is a online django based storage server for all your music to save sp
 
 
 
-**#prerequisites**
+**prerequisites**
  To host a server you will need python v3 and django latest version
 
 
 
-**#how to start**
+**how to start**
  Just clone the repo and in the command line of the folder type
  python manage.py runserver
+ it will start on 127.0.0.1:8000/login
 
 
 **#screenshots**
