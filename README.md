@@ -1,10 +1,10 @@
 # Music_Storage_Cloud
-Open cloud is a online django based storage cloud for all your music to save space across multiple device by just saving it on the hosted server.
+Open cloud is a online django based storage server for all your music to save space across multiple device by just saving it on the hosted server.
 
 
 
 **#prerequisites**
- To host the cloud on a server you will need python v3 and django latest version
+ To host a server you will need python v3 and django latest version
 
 
 
