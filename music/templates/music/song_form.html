@@ -1,0 +1,21 @@
+{% extends 'music/base.html' %}
+{% block title %}Add Song{% endblock %}
+{% block body %}
+<div class="container">
+  <div class="card mx-auto " style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Add a Song</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Here you can store a new song</h6>
+    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% include 'music/form-template.html' %}
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+</div>
+{% endblock %}

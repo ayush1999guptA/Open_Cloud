@@ -26,8 +26,12 @@ urlpatterns = [
     url(r'^music/album/add/$', views.AlbumCreate.as_view(), name='album-add'),
     url(r'^music/album/(?P<pk>[0-9]+)/$', views.AlbumUpdate.as_view(), name='album-update'),
     url(r'^music/album/(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(), name='album-delete'),
-    url(r'^register/$', views.UserFormView.as_view(), name='register')
-
+    url(r'^register/$', views.UserFormView.as_view(), name='register'),
+    url(r'login/', views.UserLogin.as_view(), name='login'),
+    url(r'^logout/$', views.LogOut, name='logout'),
+    url(r'^music/songs/$', views.SongsIndex.as_view(), name='music_songs'),
+    url(r'^music/songs/add$', views.SongCreate.as_view(), name='song-add'),
+    url(r'^music/songs/(?P<pk>[0-9]+)$', views.SongUpdate.as_view(), name='song-update'),
 
 ]
 if settings.DEBUG:

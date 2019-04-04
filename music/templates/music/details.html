@@ -18,7 +18,7 @@
   <form style="display:inline;" action="{% url 'detail' album.id %}" method="get">
     <button type="submit" class="btn btn-outline-primary" >View All</button>
   </form>
-  <form style="display:inline;"  action="#" method="get">
+  <form style="display:inline;"  action="{% url 'song-add' %}" method="get">
     <button type="submit" class="btn btn-outline-primary" >Add New Song</button>
   </form>
   </div>
@@ -42,11 +42,6 @@
     <td colspan="3" >
       <form class="woss1" action="#" method="get">
         <button type="submit" class="btn btn-success"><i class="fas fa-play"></i>play</button>
-      </form>
-    </td>
-    <td colspan="3">
-      <form class="woss2" action="#" method="get">
-        <button type="submit" class="btn btn-danger"><i class="fas fa-times"></i>Delete</button>
       </form>
     </td>
   </tr>

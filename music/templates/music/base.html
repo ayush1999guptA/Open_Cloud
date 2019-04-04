@@ -5,6 +5,7 @@
     <title>{% block title %}Music{% endblock %}</title>
     {% load staticfiles%}
     <link rel="stylesheet" href="{% static 'music/style.css' %}">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -12,6 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
   <body>
+  {% block navbar %}
     <!-- =============================navbar================================= -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark " >
     <!-- ===========logo======== -->
@@ -34,16 +36,13 @@
             </a>
             </li>
             <li class="nav-item active ">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{% url 'music_songs' %}">
                 <i class="fas fa-music"></i>
                   Songs
               </a>
             </li>
           </ul>
-          <form class="form-inline mr-auto" method="get" action="#">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-light" type="submit">Search</button>
-          </form>
+
           <ul class="navbar-nav ">
           <li class="nav-item">
             <a class="nav-link" href="{% url 'album-add' %}">
@@ -52,7 +51,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'logout' %}">
               <i class="fas fa-power-off"></i>
               Log Out
             </a>
@@ -62,6 +61,7 @@
       </div>
       <!-- ======collaspse=== -->
     </nav>
+    {% endblock %}
     <!-- =============================navbar================================= -->
     {% block body %}
     {% endblock %}

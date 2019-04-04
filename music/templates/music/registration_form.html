@@ -1,11 +1,12 @@
 {% extends 'music/base.html' %}
 {% block title %}Create an account{% endblock %}
+{% block navbar %}{% endblock %}
 {% block body %}
 <div class="container">
   <div class="card mx-auto " style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Create an account</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Here you can store a new album</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Here you have to create an account</h6>
     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {% include 'music/form-template.html' %}

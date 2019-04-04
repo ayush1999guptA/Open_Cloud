@@ -1,0 +1,34 @@
+{% extends 'music/base.html' %}
+{% block title %}Song Detail{% endblock %}
+  {% block body %}
+<div class="container">
+    <div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><p style="font-family: 'Dancing Script', cursive;font-size:80px">Songs</p></h5>
+    <p class="card-text">Here are your All of Your songs </p>
+       <ul class="list-group list-group-flush">
+           {% if all_music is None %}
+           <h3>there are No Albums</h3>
+           {% else%}
+           {% for song in all_music %}
+            <li class="list-group-item">{{song.album}}:{{song.song_title}}   -
+
+                <form style="display:inline;" action="{{ song.song_file.url }}" method="get">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-play"></i>play</button>
+                </form>
+                <form style="display:inline;"  method="post" action="{% url 'song-update' song.pk  %}">
+                    {% csrf_token %}
+                     <button class="btn btn-secondary" type="submit"><i class="fas fa-pencil-alt"></i></button>
+                     </form>
+            </li>
+           {% endfor %}
+           {% endif%}
+
+       </ul>
+  </div>
+</div>
+    </div>
+    {% endblock %}

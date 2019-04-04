@@ -1,0 +1,22 @@
+{% extends 'music/base.html' %}
+{% block title %}Login{% endblock %}
+{% block navbar %} {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="card mx-auto" style="width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title"><p style="font-family: 'Dancing Script', cursive;font-size:80px"><img src="https://image.flaticon.com/icons/png/512/122/122626.png" height="80" width="80">Open Cloud </p></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Your Music Storage Cloud </h6>
+        <p class="card-text">In open cloud you can store your music over a server for free.It gives you personalized music services and user friendly interface.If you are a registered user Log in. Or register if you are not</p>
+          <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            {% include 'music/form-template.html' %}
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Log in</button> <a href="{% url 'register' %}" class="card-link">Register</a>
+      </div>
+
+    </form>
+      </div>
+    </div>
+</div>
+{% endblock %}
